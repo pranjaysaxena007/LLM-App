@@ -8,9 +8,9 @@ import google.generativeai as genai
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-# ============================================================
+ 
 # CUSTOM CSS FOR ENHANCED UI
-# ============================================================
+ 
 st.markdown("""
     <style>
         .calorie-header {
@@ -76,17 +76,17 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# ============================================================
+ 
 # NAVIGATION
-# ============================================================
+ 
 if st.button("🏠 Back to Home"):
     st.switch_page("main.py")
 
 st.markdown("---")
 
-# ============================================================
+ 
 # PAGE HEADER
-# ============================================================
+ 
 st.markdown("""
     <div class="calorie-header">
         <h1>🍎 Calorie Counter</h1>
@@ -94,9 +94,9 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-# ============================================================
+ 
 # FUNCTIONS
-# ============================================================
+ 
 
 def get_gemini_response(input_prompt, image, system_prompt):
     """Get response from Gemini model with image"""
@@ -118,9 +118,9 @@ def input_image_setup(uploaded_image):
     else:
         raise FileNotFoundError("No File Uploaded")
 
-# ============================================================
+ 
 # MAIN INTERFACE
-# ============================================================
+ 
 
 st.subheader("📸 Upload Food Image")
 
@@ -249,9 +249,9 @@ with st.expander("💡 Tips for Best Results", expanded=False):
 
 st.markdown("---")
 
-# ============================================================
+ 
 # NAVIGATION FOOTER
-# ============================================================
+ 
 col1, col2, col3 = st.columns(3)
 
 with col1:
