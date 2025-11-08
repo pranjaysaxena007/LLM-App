@@ -23,7 +23,7 @@ def generate_code_with_gemini():
     
     if st.button("Generate Code", type="primary"):
         if description:
-            model = genai.GenerativeModel('gemini-pro')
+            model = genai.GenerativeModel('gemini-2.5-flash')
             prompt = f"Write {language} code for: {description}"
             response = model.generate_content(prompt)
             st.code(response.text, language=language.lower())
