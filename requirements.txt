@@ -7,14 +7,6 @@ chromadb
 faiss-cpu
 langchain_google_genai
 langchain-community
-pathlib
-textwrap
 IPython
-json
-os
-sqlite3
 pandas
-tempfile
-langchain
-datetime
-PIL
+Pillow
