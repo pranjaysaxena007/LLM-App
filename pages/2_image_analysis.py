@@ -20,9 +20,12 @@ def analyze_image_with_gemini():
     st.subheader("Upload and Analyze Images")
     
     uploaded_file = st.file_uploader("Upload an image:", type=["jpg", "jpeg", "png", "gif"])
+
+        if uploaded_file:
+        st.image(uploaded_file, caption="Uploaded Image", use_container_width=True)
     
     if uploaded_file and st.button("Analyze", type="primary"):
-        model = genai.GenerativeModel('gemini-2.5-flash')
+                
         image_data = uploaded_file.read()
         response = model.generate_content([
             "Analyze this image in detail. Describe what you see.",
