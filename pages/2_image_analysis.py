@@ -10,6 +10,7 @@ genai.configure(api_key=api_key)
 # Navigation
 if st.button("🏠 Back to Home"):
     st.switch_page("main.py")
+    
 
 st.markdown("---")
 
