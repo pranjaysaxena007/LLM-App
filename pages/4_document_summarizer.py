@@ -23,7 +23,7 @@ def summarize_document():
     
     if st.button("Summarize", type="primary"):
         if text:
-            model = genai.GenerativeModel('gemini-pro')
+            model = genai.GenerativeModel('gemini-2.5-flash')
             prompt = f"Summarize this {summary_length.lower()}: {text}"
             response = model.generate_content(prompt)
             st.write(response.text)
