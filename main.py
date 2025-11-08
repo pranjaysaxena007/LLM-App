@@ -1,9 +1,7 @@
 import streamlit as st
 
-# ============================================================
 # INTELLIMESH - Main Navigation Hub (Front Page)
 # This is your main.py file
-# ============================================================
 
 st.set_page_config(
     page_title="INTELLIMESH - LLM Applications",
@@ -12,9 +10,8 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# ============================================================
 # CUSTOM CSS FOR CARD-BASED UI
-# ============================================================
+
 st.markdown("""
     <style>
         .header-container {
@@ -103,9 +100,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# ============================================================
 # HEADER SECTION
-# ============================================================
+
 st.markdown("""
     <div class="header-container">
         <div class="header-title">🤖 INTELLIMESH</div>
@@ -118,25 +114,15 @@ Welcome to **INTELLIMESH** - Your integrated platform for AI-powered application
 Each feature below is a separate application you can explore independently. Click any button below to navigate!
 """)
 
-# ============================================================
 # INITIALIZE SESSION STATE
-# ============================================================
+
 if "uploaded_data" not in st.session_state:
     st.session_state.uploaded_data = None
 
 if "analysis_results" not in st.session_state:
     st.session_state.analysis_results = None
 
-# ============================================================
 # DEFINE ALL FEATURES/PAGES
-# ============================================================
-# Format: {
-#   "title": "Feature Name",
-#   "icon": "emoji",
-#   "description": "What this feature does",
-#   "function_name": "Function that handles this",
-#   "page_path": "pages/filename.py"
-# }
 
 features = [
 {
@@ -212,9 +198,8 @@ features = [
 }
 ]
 
-# ============================================================
 # DISPLAY FEATURES AS CARDS WITH NAVIGATION BUTTONS
-# ============================================================
+
 st.markdown('<div class="divider-text">🚀 Available Features</div>', unsafe_allow_html=True)
 
 # Create 2-column layout for cards
@@ -243,9 +228,8 @@ for idx, feature in enumerate(features):
         ):
             st.switch_page(feature['page_path'])
 
-# ============================================================
 # INFO SECTION
-# ============================================================
+
 st.markdown('<div class="divider-text">ℹ️ About This Application</div>', unsafe_allow_html=True)
 
 st.markdown("""
@@ -260,9 +244,8 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-# ============================================================
 # FOOTER
-# ============================================================
+
 st.markdown("---")
 col1, col2, col3 = st.columns([1, 2, 1])
 
