@@ -10,3 +10,11 @@ langchain-community
 pathlib
 textwrap
 IPython
+json
+os
+sqlite3
+pandas
+tempfile
+langchain
+datetime
+PIL
