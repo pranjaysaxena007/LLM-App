@@ -14,9 +14,9 @@ from langchain.prompts import PromptTemplate
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-# ============================================================
+ 
 # CUSTOM CSS FOR ENHANCED UI
-# ============================================================
+ 
 st.markdown("""
     <style>
         .pdf-header {
@@ -87,17 +87,17 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# ============================================================
+ 
 # NAVIGATION
-# ============================================================
+ 
 if st.button("🏠 Back to Home"):
     st.switch_page("main.py")
 
 st.markdown("---")
 
-# ============================================================
+ 
 # PAGE HEADER
-# ============================================================
+ 
 st.markdown("""
     <div class="pdf-header">
         <h1>📚 Chat with PDF</h1>
@@ -105,9 +105,9 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-# ============================================================
+ 
 # FUNCTIONS
-# ============================================================
+ 
 
 def get_pdf_text(pdf_docs):
     """Extract text from PDF documents"""
@@ -171,9 +171,9 @@ def user_input(user_question):
     except Exception as e:
         st.error(f"❌ Error: {str(e)}")
 
-# ============================================================
+ 
 # MAIN INTERFACE
-# ============================================================
+ 
 
 # Section 1: Upload PDF Files
 st.subheader("📤 Upload PDF Files")
@@ -246,9 +246,9 @@ if st.button("🔍 Get Answer", type="primary", use_container_width=True):
 
 st.markdown("---")
 
-# ============================================================
+ 
 # NAVIGATION FOOTER
-# ============================================================
+ 
 st.markdown("---")
 
 col1, col2, col3 = st.columns(3)
