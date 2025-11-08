@@ -5,9 +5,9 @@ import streamlit as st
 import os
 import google.generativeai as genai
 
-# ============================================================
+ 
 # CUSTOM CSS FOR ENHANCED UI
-# ============================================================
+ 
 st.markdown("""
     <style>
         .text-header {
@@ -65,9 +65,9 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# ============================================================
+ 
 # CONFIGURE GEMINI API
-# ============================================================
+ 
 try:
     api_key = os.getenv("GOOGLE_API_KEY")
     if api_key:
@@ -79,17 +79,17 @@ except Exception as e:
     st.error(f"❌ Error configuring Gemini API: {str(e)}")
     st.stop()
 
-# ============================================================
+ 
 # NAVIGATION
-# ============================================================
+ 
 if st.button("🏠 Back to Home"):
     st.switch_page("main.py")
 
 st.markdown("---")
 
-# ============================================================
+ 
 # PAGE HEADER
-# ============================================================
+ 
 st.markdown("""
     <div class="text-header">
         <h1>📝 Text Generation</h1>
@@ -111,9 +111,9 @@ Generate creative, contextual, and high-quality text for various purposes includ
 
 st.markdown("---")
 
-# ============================================================
+ 
 # MAIN FUNCTION
-# ============================================================
+ 
 
 def gemini_text_generation():
     """
@@ -215,16 +215,16 @@ def gemini_text_generation():
                     """, unsafe_allow_html=True)
                     
 
-# ============================================================
+ 
 # CALL THE FUNCTION
-# ============================================================
+ 
 gemini_text_generation()
 
 st.markdown("---")
 
-# ============================================================
+ 
 # TIPS SECTION
-# ============================================================
+ 
 with st.expander("💡 Tips for Better Results", expanded=False):
     st.markdown("""
     **Prompt Writing Tips:**
@@ -247,9 +247,9 @@ with st.expander("💡 Tips for Better Results", expanded=False):
 
 st.markdown("---")
 
-# ============================================================
+ 
 # NAVIGATION FOOTER
-# ============================================================
+ 
 col1, col2, col3 = st.columns(3)
 
 with col1:
