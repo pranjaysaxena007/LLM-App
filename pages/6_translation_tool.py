@@ -25,7 +25,7 @@ def translate_text():
     
     if st.button("Translate", type="primary"):
         if text:
-            model = genai.GenerativeModel('gemini-pro')
+            model = genai.GenerativeModel('gemini-2.5-flash')
             prompt = f"Translate to {target_lang}: {text}"
             response = model.generate_content(prompt)
             st.write(response.text)
