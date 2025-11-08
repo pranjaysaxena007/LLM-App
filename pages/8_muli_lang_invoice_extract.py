@@ -102,7 +102,7 @@ st.markdown("""
 
 def get_gemini_response(input_prompt, image, system_prompt):
     """Get response from Gemini model with image"""
-    model = genai.GenerativeModel('gemini-2.5-flash-lite')
+    model = genai.GenerativeModel('gemini-2.5-flash')
     response = model.generate_content([system_prompt, image[0], input_prompt])
     return response.text
 
