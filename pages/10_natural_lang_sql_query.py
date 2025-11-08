@@ -121,7 +121,7 @@ st.markdown("""
 
 def get_gemini_response(question, prompt):
     """Generate SQL query from natural language using Gemini"""
-    model = genai.GenerativeModel(model_name="gemini-2.5-flash-lite")
+    model = genai.GenerativeModel(model_name="gemini-2.5-pro")
     response = model.generate_content([prompt[0], question])
     return response.text
 
