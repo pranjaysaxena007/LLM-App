@@ -200,7 +200,7 @@ def get_database_schema(conn):
         return None
 
 def generate_sql_query(natural_language_query, schema_info):
-    """Use Gemini to convert natural language to SQL"""
+    """Use Gemini to convert natural language to SQL with strict formatting"""
     try:
         schema_text = "Database Schema:\n"
         for table_name, info in schema_info.items():
@@ -208,19 +208,23 @@ def generate_sql_query(natural_language_query, schema_info):
             schema_text += f"- Table: {table_name} ({columns})\n"
         
         prompt = f"""You are an expert SQL developer. 
-Convert the following natural language query to SQL.
+Convert the following natural language query to SQL for a SQLite database.
 
 {schema_text}
 
 Natural Language Query: {natural_language_query}
 
-Return ONLY the SQL query, no explanations.
+CRITICAL: Return ONLY the raw SQL code. 
+DO NOT include Markdown formatting, backticks (```), or the word 'sql'. 
 Ensure the query is valid for SQLite."""
         
-        model = genai.GenerativeModel('gemini-2.5-flash')
+        # Using gemini-1.5-flash as gemini-2.5 is not a standard version string
+        model = genai.GenerativeModel('gemini-1.5-flash')
         response = model.generate_content(prompt)
         
-        return response.text.strip()
+        # CLEANUP: Remove backticks and 'sql' tag if the model ignores instructions
+        sql_query = response.text.strip().replace("```sql", "").replace("```", "").strip()
+        return sql_query
     except Exception as e:
         st.error(f"❌ Error generating SQL: {str(e)}")
         return None
