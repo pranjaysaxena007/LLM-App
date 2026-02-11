@@ -218,8 +218,8 @@ CRITICAL: Return ONLY the raw SQL code.
 DO NOT include Markdown formatting, backticks (```), or the word 'sql'. 
 Ensure the query is valid for SQLite."""
         
-        # Using gemini-1.5-flash as gemini-2.5 is not a standard version string
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        
+        model = genai.GenerativeModel('gemini-2.0-flash')
         response = model.generate_content(prompt)
         
         # CLEANUP: Remove backticks and 'sql' tag if the model ignores instructions
